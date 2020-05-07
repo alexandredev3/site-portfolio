@@ -1,0 +1,25 @@
+{% extends "layout.njk" %}
+<!-- Ele vai pegar todo que tem aqui e levar la pro layout -->
+
+{% block head %}
+  <title>Sobre - {{ data.name }}</title>
+{% endblock %}
+
+{% block content %}
+
+  <!-- E parar idicar que isso e um codigo html 5 -->
+  <div id="wrapper">
+    <img src="{{ data.avatar_url }}" alt="Imagem de {{ data.name }}">
+    <h1>{{ data.name }}</h1>
+    <h2>{{ data.role }}</h2>
+    <p>{{ data.description }}</p>
+  </div>
+
+  <div id="links-footer" class="links">
+    {% for link in data.links %}
+      <a href="{{ link.url }}" target="_blank">{{ link.name }}</a>
+    {% endfor %}
+    <!--ja que nos vamos repedir os links então podemos usa o for-->
+  </div>
+
+{% endblock %}

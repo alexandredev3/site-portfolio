@@ -1,0 +1,233 @@
+@import "https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap";
+/* Importar a fonte direto no css */
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background: #282a36;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #fff;
+}
+
+:root {
+  --color-green: #50fa7b;
+  --color-rocket: #7159c1;
+} /* Essa e uma maneira de criar variaveis no css */
+
+header {
+  padding: 32px;  /* Espaçamento interno, Deixa o elemento gordo */
+  border: 1px solid #333; /* Borda */
+  /* margin: 15px; Espaçamento externo */
+  background: rgb(0, 0, 0, 0.1);
+}
+
+.links {
+  text-align: center;
+}
+
+.links a {
+  color: white;
+  font-size: 18px;
+  line-height: 28px;
+  /* Sempre coloque 10px a mais do size da fonte */
+  margin: 0 16px;
+  padding-bottom: 3px;
+  text-decoration: none;
+}
+
+.links a:hover {
+  color: var(--color-green); /* Essa é uma maneira de chamar a variavel */
+  transition: color 200ms;
+}
+
+div#wrapper {
+  text-align: center;
+  padding: 32px;
+}
+
+div#wrapper img {
+  border-radius: 50%;
+  border: 5px solid var(--color-green);
+  margin-bottom: 32px;
+  height: 300px;
+}
+
+div#wrapper h1 {
+  font-size: 42px;
+  line-height: 52px;
+  font-weight: bold;
+}
+
+div#wrapper h2 {
+  font-size: 24px;
+  line-height: 34px;
+  font-weight: normal;
+  margin-top: 8px;
+  opacity: 0.8;
+}
+
+div#wrapper p {
+  max-width: 500px;
+  margin: 32px auto;
+  font-style: 24px;
+  line-height: 34px;
+}
+
+div#wrapper p a {
+  color: var(--color-green);
+}
+
+#links-footer a{
+  border-bottom: 1px solid var(--color-green);
+}
+
+/*=== CARDS ===*/
+
+.cards {
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.card {
+  display: grid;
+  background: var(--color-rocket);
+  transition: all 100ms;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.08);
+  background: #7e67c9;
+}
+
+.card__image-container img {
+  width: 100%;
+}
+
+.card__content,
+.card__info {
+  padding: 24px;
+  align-items: center;
+}
+
+.card__info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.card__price {
+  background: var(--color-rocket);
+  filter: brightness(90%);
+  padding: 5px 20px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+/* === MODAL === */
+
+.modal-overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal {
+  width: 90%;
+  height: 90%;
+  margin: 5vh auto;
+  background: #FFF;
+  position: relative;
+}
+
+.modal .close-modal {
+  color: black;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  cursor: pointer;
+  transition: all 200ms;
+}
+
+.modal .close-modal:hover{
+  color: rgb(53, 53, 53);
+}
+
+.modal .close-modal:active {
+  transform: scale(1.2);
+}
+
+/* === Modal.Active === */
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+iframe {
+  width: 100%;
+  height: 90%;
+  position: absolute;
+  top: 5%;
+}
+
+/* === Featured === */
+
+.featured-wrapper {
+  position: relative;
+}
+
+.featured {
+  position: absolute;
+  right: 5px;
+  top: -10px;
+  background: #f7d05f;
+  color: #111;
+  padding: 2px 8px;
+  border-radius: 16px;
+}
+
+/* === Vídeo page === */
+
+.card__video {
+  display: grid;
+  background: var(--color-rocket);
+  transition: all 100ms;
+  cursor: pointer;
+}
+
+.video {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.video .card__video  {
+  cursor: initial;
+}
+
+.card__video-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  /* 
+    Estamos fazendo o vídeo ficar 16:9
+    mesma coisa de dividir 9 por 16, e, depois multiplicar por 100.
+  */
+}
+
+.card__video-container iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
